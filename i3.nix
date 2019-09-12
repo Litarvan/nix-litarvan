@@ -20,11 +20,18 @@
       "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
       "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
       "${modifier}+Shift+m" = "exec ${pkgs.firefox}/bin/firefox";
+
+      "${modifier}+Shift+b" = "exec systemctl poweroff";
     };
 		
     startup = [
       {
-        command = "${pkgs.feh}/bin/feh --bg-scale /home/litarvan/background.png"; # Todo fetch background from URL
+        command = "${pkgs.bash}/bin/bash ~/screens.sh"; # TODO: Check if exists
+        always = true;
+      }
+
+      {
+        command = "${pkgs.feh}/bin/feh --bg-scale /home/litarvan/background.png"; # TODO: fetch background from URL
         always = true;
         notification = false;
       }

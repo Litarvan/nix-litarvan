@@ -15,20 +15,23 @@ in
     package = pkgs.polybar.override {
       i3GapsSupport = true;
       alsaSupport = true;
-      # iwSupport = true;
     };
     
-    script = "polybar main &";
+    script = ''
+      ${pkgs.xorg.xrandr}/bin/xrandr --listactivemonitors | \
+        ${pkgs.gnugrep}/bin/grep -oP '(HDMI\-\d+|eDP\-\d+)' | \
+        ${pkgs.findutils}/bin/xargs -P1 -I{} ${pkgs.bash}/bin/bash -c "MONITOR={} polybar -q -r main &"
+    '';
   
     config = {
       "global/wm" = {
         margin-bottom = 0;
         margin-top = 0;
-      
-        # includes
       };
     
       "bar/main" = {
+        monitor = "$\{env:MONITOR:}";
+
         monitor-strict = false;
         override-redirect = false;
         
@@ -67,8 +70,6 @@ in
         modules-left = "i3 cpu";
         modules-center = "memory alsa battery backlight";
         modules-right = "network date";
-       
-        separator = ""; # ??
         
         spacing = 0;
         
@@ -76,7 +77,7 @@ in
         
         tray-position = "right";
         tray-detached = false;
-        tray-maxsize = 8;
+        tray-maxsize = 16;
         tray-background = bg;
         tray-offset-x = 0;
         tray-offset-y = 0;
@@ -155,6 +156,12 @@ in
         format-charging-underline = bg;
         format-charging-overline = bg;
         format-charging-padding = 2;
+
+        format-discharging = "BAT <label-discharging>";
+        format-discharging-background = mf;
+        format-discharging-underline = bg;
+        format-discharging-overline = bg;
+        format-discharging-padding = 2;
         
         label-charging = "%percentage%%";
         label-discharging = "%percentage%%";
@@ -228,33 +235,28 @@ in
       "module/i3" = {
         type = "internal/i3";
         
-        pin-workspaces = true;
-        
         format = "<label-state> <label-mode>";
         
         label-mode = "%mode%";
         label-mode-padding = 2;
         label-mode-background = "#e60053";
         
+        label-unfocused-padding = 2;
+
         label-focused = "%index%";
         label-focused-foreground = "#ffffff";
         label-focused-background = "#3f3f3f";
         label-focused-underline = ac;
-        label-focused-padding = 4;
-        
+        label-focused-padding = 2;        
+
         label-visible = "%index%";
         label-visible-underline = "#555555";
-        label-visible-padding = 4;
+        label-visible-padding = 2;
         
         label-urgent = "%index%";
         label-urgent-foreground = "#000000";
         label-urgent-background = bg;
-        label-urgent-padding = 4;
-        
-        label-separator = "|";
-        label-separator-padding = 2;
-        label-separator-foreground = fg;
-        # TODO ?
+        label-urgent-padding = 2;
       };
       
       "module/memory" = {
@@ -274,7 +276,7 @@ in
       
       "module/network" = {
         type = "internal/network";
-        interface = "eth0";
+        interface = "enp3s0";
         
         interval = "1.0";
         

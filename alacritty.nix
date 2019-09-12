@@ -14,7 +14,7 @@
 
     font = {
       normal.family = "Meslo LG S for Powerline";
-      size = 11.0;
+      size = 10.0;
     };
 
     background_opacity = 0.7;

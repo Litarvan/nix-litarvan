@@ -8,7 +8,7 @@
   blurExclude = [ "window_type = 'dock'" "window_type = 'desktop'" ];
   
   fade = true;
-  fadeDelta = 3;
+  fadeDelta = 5;
   
   shadow = true;
   shadowOffsets = [ (-7) (-7) ];
