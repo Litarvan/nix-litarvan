@@ -23,7 +23,7 @@ pkgs.writeText "conky-config" ''
   }
 
   conky.text = [[
-  ''${font Robot:light:size=72}''${time %H}:''${time %M}
+  ''${font Roboto:light:size=72}''${time %H}:''${time %M}
   ''${font Roboto:light:size=36}''${time %A} ''${time %d} ''${time %B}
   ''${font Roboto:light:size=18}· Le CPU est actuellement utilisé à ''${cpu cpu0}%
   · Il y a $mem de RAM utilisé

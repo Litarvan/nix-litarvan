@@ -17,11 +17,13 @@ in
       alsaSupport = true;
     };
     
-    script = ''
-      ${pkgs.xorg.xrandr}/bin/xrandr --listactivemonitors | \
-        ${pkgs.gnugrep}/bin/grep -oP '(HDMI\-\d+|eDP\-\d+)' | \
-        ${pkgs.findutils}/bin/xargs -P1 -I{} ${pkgs.bash}/bin/bash -c "MONITOR={} polybar -q -r main &"
-    '';
+#    script = ''
+#      ${pkgs.xorg.xrandr}/bin/xrandr --listactivemonitors | \
+#        ${pkgs.gnugrep}/bin/grep -oP '(HDMI\-\d+|eDP\-\d+)' | \
+#        ${pkgs.findutils}/bin/xargs -P1 -I{} ${pkgs.bash}/bin/bash -c "MONITOR={} polybar -q -r main"
+#    '';
+
+    script = "polybar -q -r main &";
   
     config = {
       "global/wm" = {
@@ -30,7 +32,7 @@ in
       };
     
       "bar/main" = {
-        monitor = "$\{env:MONITOR:}";
+#        monitor = "$\{env:MONITOR:}";
 
         monitor-strict = false;
         override-redirect = false;

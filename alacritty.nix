@@ -1,7 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   enable = true;
+  #package = import ./alacritty-old.nix;
 
   settings = {
     window = {
@@ -18,6 +19,11 @@
     };
 
     background_opacity = 0.7;
+
+    shell = {
+      program = "${pkgs.fish}/bin/fish";
+      args = [ "--init-command" "echo; neofetch; echo" ];
+    };
 
     colors = {
       primary = {
