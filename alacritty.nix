@@ -2,7 +2,6 @@
 
 {
   enable = true;
-  #package = import ./alacritty-old.nix;
 
   settings = {
     window = {

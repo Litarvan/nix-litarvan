@@ -17,13 +17,13 @@
     
     keybindings = lib.mkOptionDefault {
       "${modifier}+Return" = null;
-      "${modifier}+Shift+Return" = "exec ${import ./alacritty-old.nix}/bin/alacritty";
+      "${modifier}+Shift+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
       "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
       "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
       "${modifier}+Shift+m" = "exec ${pkgs.firefox}/bin/firefox";
 
       "${modifier}+Shift+b" = "exec systemctl poweroff";
-			"${modifier}+Shift+x" = "exec systemctl suspend";
+      "${modifier}+Shift+x" = "exec systemctl suspend";
     };
 		
     startup = [
