@@ -26,7 +26,7 @@ in buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "jwilm";
     repo = pname;
-    rev = "master";
+    rev = "d741d3817debe9fdd4030bede3e4c8ca84ad078a";
     sha256 = "0ki6agivxzj3ix3bb0n24bzy98h425553iv4f5j0gng82gjz5kdb";
   };
 
