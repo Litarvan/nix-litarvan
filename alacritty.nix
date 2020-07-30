@@ -6,9 +6,14 @@
   settings = {
     window = {
       title = "Terminal";
+
+      position = {
+        x = 900;
+        y = 350;
+      };
       dimensions = {
-        lines = 75;
-        columns = 100;
+        lines = 40;
+        columns = 125;
       };
     };
 
@@ -17,7 +22,7 @@
       size = 10.0;
     };
 
-    background_opacity = 0.7;
+    background_opacity = 0.875;
 
     shell = {
       program = "${pkgs.fish}/bin/fish";
