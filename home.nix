@@ -11,7 +11,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    htop neofetch zip unzip aria2 scrot feh alacritty file hfsprogs lz4 ntfs3g patchelf unrar wget gpg
+    htop neofetch zip unzip aria2 scrot feh alacritty file hfsprogs lz4 ntfs3g patchelf unrar wget gnupg
     nodejs gradle adoptopenjdk-bin rustup gcc m4 gnumake binutils docker-compose
     powerline-fonts roboto source-code-pro dejavu_fonts noto-fonts-emoji jetbrains-mono
     unstable.idea.clion unstable.idea.idea-ultimate unstable.idea.rider unstable.idea.pycharm-community unstable.android-studio
