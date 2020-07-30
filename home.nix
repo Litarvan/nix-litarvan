@@ -4,6 +4,10 @@ let
   unstable = import <nixos-unstable> { config.allowUnfree = true; };
 in
 {
+  imports = [
+    ./local.nix # See local.example.nix
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
