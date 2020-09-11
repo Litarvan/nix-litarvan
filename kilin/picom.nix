@@ -22,7 +22,7 @@
   menuOpacity = "0.8";
   
   backend = "glx";
-  vSync = "opengl";
+  vSync = true;
   
   extraOptions = ''
     shadow-radius = 7;
@@ -37,16 +37,5 @@
     detect-transient = true;
     mark-wmwin-focused = true;
     mark-ovredir-focused = true;
-    
-    wintypes :
-    {
-      tooltip :
-      {
-        fade = true;
-        shadow = false;
-        opacity = 0.75;
-        focus = true;
-      };
-    };
   '';
 }

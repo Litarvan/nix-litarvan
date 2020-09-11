@@ -5,6 +5,7 @@
         conky
         emacs auctex aspell
         siji (import ./termsyn.nix)
+        wpa_supplicant
     ];
 
     programs = {
@@ -12,7 +13,7 @@
     };
 
     services = {
-        compton = import ./compton.nix {};
+        picom = import ./picom.nix {};
         polybar = import ./polybar.nix { inherit pkgs; };
     };
 

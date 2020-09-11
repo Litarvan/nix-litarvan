@@ -2,7 +2,7 @@
 
 {
     home.packages = with pkgs; [
-        obs-studio spectacle
+        spectacle krita qbitorrent
         arc-kde-theme papirus-icon-theme
     ];
 }

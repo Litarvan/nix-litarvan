@@ -30,4 +30,8 @@ stdenv.mkDerivation rec {
   '';
   
   installFlags = [ "PREFIX=$(out)" ];
+
+  postFixup = ''
+    mv $out/bin/compton $out/bin/picom
+  '';
 }
