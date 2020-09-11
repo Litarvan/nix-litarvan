@@ -21,6 +21,7 @@
       "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
       "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
       "${modifier}+Shift+m" = "exec ${pkgs.firefox}/bin/firefox";
+      "${modifier}+Shift+s" = "exec ${pkgs.spectacle}/bin/spectacle -r -b";
 
       "${modifier}+Shift+b" = "exec systemctl poweroff";
       "${modifier}+Shift+x" = "exec systemctl suspend";
