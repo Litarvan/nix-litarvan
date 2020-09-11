@@ -2,7 +2,7 @@
 
 {
     home.packages = with pkgs; [
-        spectacle krita qbitorrent
+        spectacle qbitorrent
         arc-kde-theme papirus-icon-theme
     ];
 }
