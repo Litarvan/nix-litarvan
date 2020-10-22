@@ -12,9 +12,9 @@ in
 
   home.packages = with pkgs; [
     htop neofetch zip unzip aria2 scrot feh alacritty file hfsprogs lz4 ntfs3g patchelf unrar wget gnupg findutils imagemagick p7zip
-    nodejs gradle adoptopenjdk-bin rustup gcc m4 gnumake binutils docker-compose
+    nodejs-12_x gradle adoptopenjdk-bin rustup gcc m4 gnumake binutils docker-compose
     powerline-fonts roboto source-code-pro dejavu_fonts noto-fonts-emoji jetbrains-mono
-    unstable.idea.clion unstable.idea.idea-ultimate  android-studio
+    unstable.idea.clion unstable.idea.idea-ultimate android-studio
     discord krita spectacle vlc obs-studio qbittorrent steam
   ];
 
