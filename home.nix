@@ -15,7 +15,7 @@ in
     nodejs-12_x gradle adoptopenjdk-bin rustup gcc m4 gnumake binutils docker-compose
     powerline-fonts roboto source-code-pro dejavu_fonts noto-fonts-emoji jetbrains-mono
     unstable.idea.clion unstable.idea.idea-ultimate android-studio
-    discord krita spectacle vlc obs-studio qbittorrent steam
+    discord krita spectacle vlc obs-studio qbittorrent
   ];
 
   programs = {
