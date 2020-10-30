@@ -1,5 +1,11 @@
 { pkgs, lib, ... }:
 
+let
+    wallpaper = builtins.fetchurl {
+      url = https://litarvan.com/wallpaper.png;
+      sha256 = "1vapra7w4ch4y445gijx6dxw4ki2xpwln728wzl1aif1ymhidn2j";
+    };
+in
 {
   enable = true;
   package = pkgs.i3-gaps;
@@ -21,7 +27,7 @@
       "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
       "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
       "${modifier}+Shift+m" = "exec ${pkgs.firefox}/bin/firefox";
-      "${modifier}+Shift+s" = "exec ${pkgs.spectacle}/bin/spectacle -r -b";
+      "${modifier}+Shift+s" = "exec ${pkgs.spectacle}/bin/spectacle -r";
 
       "${modifier}+Shift+b" = "exec systemctl poweroff";
       "${modifier}+Shift+x" = "exec systemctl suspend";
@@ -34,7 +40,7 @@
       }
 
       {
-        command = "${pkgs.feh}/bin/feh --bg-scale /home/litarvan/background.png"; # TODO: fetch background from URL
+        command = "${pkgs.feh}/bin/feh --bg-scale ${wallpaper}";
         always = true;
         notification = false;
       }
