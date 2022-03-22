@@ -3,7 +3,6 @@
 {
     home.packages = with pkgs; [
         conky
-        emacs auctex aspell
         siji (import ./termsyn.nix)
         wpa_supplicant
     ];

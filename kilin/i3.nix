@@ -11,7 +11,7 @@ in
   package = pkgs.i3-gaps;
   
   config = rec {
-    modifier = "Mod1";
+    modifier = "Mod4";
     bars = [];
 		
     window.border = 0;
@@ -24,7 +24,7 @@ in
     keybindings = lib.mkOptionDefault {
       "${modifier}+Return" = null;
       "${modifier}+Shift+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
-      "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
+      "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun -show-icons";
       "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
       "${modifier}+Shift+m" = "exec ${pkgs.firefox}/bin/firefox";
       "${modifier}+Shift+s" = "exec ${pkgs.spectacle}/bin/spectacle -r";
@@ -48,6 +48,21 @@ in
       {
         command = "${pkgs.conky}/bin/conky -c ${import ./conky.nix { inherit pkgs; }}";
         notification = false;
+      }
+
+      {
+        command = "${pkgs.numlockx}/bin/numlockx";
+        always = true;
+      }
+
+      {
+        command = "${pkgs.discord}/bin/Discord --enable-gpu-rasterization";
+        notification = false;
+      }
+
+      {
+        command = "setxkbmap -option caps:swapescape";
+        always = true;
       }
     ];
   };

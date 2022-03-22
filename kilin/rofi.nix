@@ -2,6 +2,7 @@
 
 {
   enable = true;
+  font = "Roboto 11";
   
   theme = builtins.toString (pkgs.writeText "rofi-theme" ''
     /**
@@ -9,15 +10,6 @@
      * (edited by Litarvan)
      */
   
-    configuration {
-      display-drun:    "Activate";
-      display-run:     "Execute";
-      display-window:  "Window";
-      show-icons:      true;
-      sidebar-mode:    true;
-      font: "Roboto 11";
-    }
-
     * {
       background-color:            transparent;
       text-color:                  #b2aea8;
